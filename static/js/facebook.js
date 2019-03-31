@@ -2,7 +2,7 @@ var fbtoken = "";
 
 window.fbAsyncInit = function() {
 	FB.init({
-		appId: '158550007562379',
+		appId: '372503653347149',
 		cookie: true,
 		xfbml: true,
 		version: 'v3.2'
