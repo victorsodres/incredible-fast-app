@@ -3,20 +3,19 @@ function saveForm() {
 	var message = document.getElementById("feedbackmessageTextArea").value;
 	var contact = document.getElementById("contactField").value;
 
-	var url = "/saveForm?contact=" + contact 
+	var url = "/contato?contact=" + contact 
 				+ "&message=" + message 
 				+ "&fbtoken=" + fbtoken;
 	
 	$.post(url, {}, function(response) {
-		var itemid = response;
 		listForm();
 	});
 }
 
 function listForm() {
-	var url = "/listForm?fbtoken=" + fbtoken;
+	var url = "/contato?fbtoken=" + fbtoken;
 	
-	$.post(url, {}, function(response) {
+	$.get(url, {}, function(response) {
 		var list = "";
 		var items = jQuery.parseJSON(response);
 		for(var k in items) {
